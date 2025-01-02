@@ -6,5 +6,5 @@ date: 2024-09-28
 venue: 'NERC | Extended Abstract'
 ---
 
-[[Paper]](https://viraj96.github.io/files/paper9.pdf)
-[[Poster]](https://viraj96.github.io/files/poster1.pdf)
+[[Paper]](https://virajparimi.github.io/files/paper9.pdf)
+[[Poster]](https://virajparimi.github.io/files/poster1.pdf)

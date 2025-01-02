@@ -8,4 +8,4 @@ We used autoencoder models with discrete latent space representations to perform
 technique and performed extensive experiments on different image and text based datasets.
 <br/><img style='margin: auto; display: block; width: 80% !important; max-width: 700px !important;' src='/images/Lossy_Compression.png'>
 
-[[PDF]](https://viraj96.github.io/files/portfolio-4/report.pdf) [[Code]](https://github.com/divamgupta/dnn_lossy_compression)
+[[PDF]](https://virajparimi.github.io/files/portfolio-4/report.pdf) [[Code]](https://github.com/divamgupta/dnn_lossy_compression)

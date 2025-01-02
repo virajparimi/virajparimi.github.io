@@ -7,4 +7,4 @@ collection: portfolio
 Introduced dRRT, a discrete sampling-based planner that uses Bresenham's line algorithm and techniques from search-based planning to achieve anytime qualities and reuse computation. Results on planning for a 5-DOF robotic arm demonstrate faster performance than traditional RRT.
 <br/><img style='margin: auto; display: block; width: 80% !important; max-width: 700px !important;' src='/images/Planning.png'>
 
-[[PDF]](https://viraj96.github.io/files/portfolio-3/report.pdf) [[Slides]](https://viraj96.github.io/files/portfolio-3/presentation.pptx) [[Code]](https://bitbucket.org/eaglez1111/16782_final_proj/src/master/)
+[[PDF]](https://virajparimi.github.io/files/portfolio-3/report.pdf) [[Slides]](https://virajparimi.github.io/files/portfolio-3/presentation.pptx) [[Code]](https://bitbucket.org/eaglez1111/16782_final_proj/src/master/)

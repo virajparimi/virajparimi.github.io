@@ -12,5 +12,5 @@ In this paper, we introduce a novel method that integrates the strengths of both
 
 Utilizing this unified high-level graph and a shared low-level goal-conditioned safe RL policy, we extend this approach to address the multi-agent safe navigation problem. In particular, we leverage Conflict-Based Search (CBS) to create waypoint-based plans for multiple agents allowing for their safe navigation over extended horizons. This integration enhances the scalability of goal-conditioned safe RL in multi-agent scenarios, enabling efficient coordination among agents. Extensive benchmarking against state-of-the-art baselines demonstrates the effectiveness of our method in achieving distance goals safely for multiple agents in complex and hazardous environments.
 
-[[NeurIPS IMOL]](https://viraj96.github.io/files/paper10.pdf) <br>
-[[CoRL LEAP]](https://viraj96.github.io/files/paper11.pdf)
+[[NeurIPS IMOL]](https://virajparimi.github.io/files/paper10.pdf) <br>
+[[CoRL LEAP]](https://virajparimi.github.io/files/paper11.pdf)
