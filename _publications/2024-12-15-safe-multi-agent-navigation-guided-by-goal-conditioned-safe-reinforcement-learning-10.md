@@ -3,7 +3,7 @@ title: "Safe Multi-Agent Navigation guided by Goal-Conditioned Safe Reinforcemen
 collection: publications
 permalink: /publication/2024-12-15-safe-multi-agent-navigation-guided-by-goal-conditioned-safe-reinforcement-learning-10
 date: 2024-12-15
-venue: ['NeurIPS | Intrisically Motivated Open-Ended Learning', 'CoRL | Learning Effective Abstractions for Planning']
+venue: ['ICRA', 'NeurIPS | Intrisically Motivated Open-Ended Learning', 'CoRL | Learning Effective Abstractions for Planning']
 ---
 
 Safe navigation is essential for autonomous systems operating in hazardous environments. Traditional planning methods are effective for solving long-horizon tasks but depend on the availability of a graph representation with predefined distance metrics. In contrast, safe Reinforcement Learning (RL) is capable of learning complex behaviors without relying on manual heuristics but fails to solve long-horizon tasks, particularly in goal-conditioned and multi-agent scenarios.
