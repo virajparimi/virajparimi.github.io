@@ -59,6 +59,13 @@
 }
 
 .page__footer-follow {
+  .page__footer-follow-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+  }
+
   ul {
     margin: 0;
     padding: 0;
@@ -88,5 +95,12 @@
     a {
       white-space: nowrap;
     }
+  }
+
+  .page__footer-updated {
+    font-family: $global-font-family;
+    font-size: $type-size-7;
+    margin-left: auto;
+    text-align: right;
   }
 }

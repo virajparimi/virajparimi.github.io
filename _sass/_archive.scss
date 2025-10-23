@@ -39,13 +39,134 @@
   }
 }
 
+.pub-section {
+  margin: 2.5em 0;
+  padding: 1.75em 1.5em;
+  border-radius: $border-radius;
+  background-color: mix($body-color, $lighter-gray, 80%);
+  border-left: 6px solid $primary-color;
+
+  &:first-of-type {
+    margin-top: 1.5em;
+  }
+}
+
+.pub-section__heading {
+  margin: 0 0 1em;
+  font-size: $type-size-3;
+  font-family: $header-font-family;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: $darker-gray;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid transparent;
+  position: relative;
+}
+
+.pub-section--conference {
+  border-left-color: $info-color;
+  .pub-section__heading {
+    border-color: $info-color;
+  }
+}
+
+.pub-section--journal {
+  border-left-color: $success-color;
+  .pub-section__heading {
+    border-color: $success-color;
+  }
+}
+
+.pub-section--workshop {
+  border-left-color: $warning-color;
+  .pub-section__heading {
+    border-color: $warning-color;
+  }
+}
+
+.pub-section--misc {
+  border-left-color: $accent-color;
+  .pub-section__heading {
+    border-color: $accent-color;
+  }
+}
+
+.pub-section--thesis {
+  border-left-color: $primary-color;
+  .pub-section__heading {
+    border-color: $primary-color;
+  }
+}
+
 .archive__item-title {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.15em;
   font-family: $sans-serif-narrow;
 
   a + a {
     opacity: 0.5;
   }
+}
+
+.archive__item-title + p {
+  margin-top: 0.2em;
+}
+
+.archive__item p {
+  margin: 0.35em 0;
+}
+
+.archive__item-wrapper {
+  position: relative;
+  margin: 0 -0.5em;
+  padding: 1.25em;
+  border-radius: $border-radius * 2;
+  overflow: hidden;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+
+  &.archive__item-wrapper--with-media .archive__item {
+    display: flex;
+    gap: 1.25em;
+    align-items: center;
+  }
+
+  &:hover {
+    background-color: mix($body-color, $lighter-gray, 60%);
+    box-shadow: 0 12px 28px rgba(#000, 0.12);
+  }
+}
+
+.archive__item-media {
+  flex: 0 0 140px;
+  max-width: 140px;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @include breakpoint($small) {
+    flex-basis: 160px;
+    max-width: 160px;
+  }
+}
+
+.archive__item-text {
+  flex: 1 1 auto;
+}
+
+.archive__item-authors {
+  font-size: $type-size-6 * 1.15;
+  color: mix($text-color, $gray, 70%);
+}
+
+.archive__item-note {
+  margin-top: 0.2em;
+  font-size: $type-size-6;
+  color: mix($text-color, $gray, 70%);
 }
 
 /* remove border*/
@@ -71,6 +192,57 @@
   overflow: hidden;
   img {
     width: 100%;
+  }
+}
+
+.archive__item-summary {
+  margin-top: 0.5em;
+}
+
+.archive__item-links {
+  margin-top: 0.75em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+  .btn {
+    font-size: $type-size-7;
+    text-transform: none;
+    letter-spacing: 0.01em;
+  }
+}
+
+.archive__item-project {
+  margin-top: 0.75em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em 0.5em;
+  align-items: center;
+  font-size: $type-size-6;
+}
+
+.archive__item-project-label {
+  font-weight: 600;
+  color: $text-color;
+
+  i {
+    margin-right: 0.25em;
+    color: $primary-color;
+  }
+}
+
+.archive__item-project-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35em 0.75em;
+}
+
+.archive__item-project-link {
+  color: $link-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $link-color-hover;
   }
 }
 

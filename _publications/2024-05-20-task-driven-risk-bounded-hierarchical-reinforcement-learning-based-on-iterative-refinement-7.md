@@ -3,10 +3,38 @@ title: "Task-driven Risk-bounded Hierarchical Reinforcement Learning Based on It
 collection: publications
 permalink: /publication/2024-05-20-task-driven-risk-bounded-hierarchical-reinforcement-learning-based-on-iterative-refinement
 date: 2024-05-20
-venue: 'AAAI Spring Symposium | Symposium on Human-Like Learning'
+venue: 'AAAI Spring Symposium on Human-Like Learning'
+pub_type: workshop
+authors:
+  - Viraj Parimi
+  - Sungkweon Hong
+  - Brian C. Williams
+summary: "Bridged conditional planning with hierarchical RL to iteratively refine risk budgets, enabling agents to tackle long-horizon tasks while respecting safety constraints."
+links:
+  - label: Paper
+    url: /files/paper7.pdf
+    icon: file-pdf
+    btn_class: btn--primary
+  - label: Slides
+    url: /files/slides2.pptx
+    icon: file-powerpoint
+abstract: |-
+  Deep Reinforcement Learning(RL) faces significant scalability challenges when dealing with complex, long-horizon tasks. This paper addresses this issue by introducing a hybrid approach that combines model-based conditional planning with RL. The proposed approach incorporates a novel iterative primitive refinement technique that strategically biases computational effort to accelerate policy improvement, which is particularly beneficial in risk-bounded and time-critical domains. In addition, we explore a comprehensive range of prioritization methods and conduct a thorough analysis of their strengths and weaknesses. To demonstrate the scalability of the proposed approach, we evaluate it in both 2D and 3D robot manipulation environments with relevant baseline methods, while empirically examining the performance of the prioritization methods.
+bibtex: |-
+  @inproceedings{parimi2024task,
+    title={Task-driven Risk-bounded Hierarchical Reinforcement Learning Based on Iterative Refinement},
+    author={Parimi, Viraj and Hong, Sungkweon and Williams, Brian},
+    booktitle={Proceedings of the AAAI Symposium Series},
+    volume={3},
+    number={1},
+    pages={573--575},
+    year={2024}
+  }
+header:
+  teaser: Robot_Env.png
+  teaser_alt: "Risk-aware hierarchical learning diagram"
+lead_image: /images/Robot_Env.png
+lead_image_alt: "Risk-aware hierarchical learning diagram"
 ---
 
-Deep Reinforcement Learning (DRL) has garnered substantial acclaim for its versatility and widespread applications across diverse domains. Aligned with human-like learning, DRL is grounded in the fundamental principle of learning from interaction, wherein agents dynamically adjust behavior based on environmental feedback in the form of rewards. This iterative trial-and-error process, mirroring human learning, underscores the importance of observation, experimentation, and feedback in shaping understanding and behavior. DRL agents, trained to navigate complex surroundings, refine their knowledge through hierarchical and abstract representations, empowered by deep neural networks. These representations enable efficient handling of long-horizon tasks and flexible adaptation to novel situations, akin to the human ability to construct mental models for comprehending complex concepts and predicting outcomes. Hence, abstract representation building emerges as a critical aspect in the learning processes of both artificial agents and human learners, particularly in long-horizon tasks. Furthermore, human decision-making, deeply rooted in evolutionary history, exhibits a remarkable capacity to balance the tradeoff between risk and cost across various domains. This cognitive process involves assessing potential negative consequences, evaluating factors such as the likelihood of adverse outcomes, severity of potential harm, and overall uncertainty. Humans intuitively gauge inherent risks and adeptly weigh associated costs, extending beyond monetary expenses to include time, effort, and opportunity costs. The nuanced ability of humans to consider the tradeoff between risk and cost highlights the complexity and adaptability of human decision-making, a skill lacking in typical DRL agents. Principles like these derived from human-like learning present an avenue for inspiring advancements in DRL, fostering the development of more adaptive and intelligent artificial agents. Motivated by these observations and focusing on practical challenges in robotics, our efforts target risk-aware stochastic sequential decision-making problem which is crucial for tasks with extended time frames and varied strategies. A novel integration of model-based conditional planning with DRL is proposed, inspired by hierarchical techniques. This approach breaks down complex tasks into manageable subtasks(motion primitives), ensuring safety constraints and informed decision-making. Unlike existing methods, our approach addresses motion primitive improvement iteratively, employing diverse prioritization functions to guide the search process effectively. This risk-bounded planning algorithm seamlessly integrates conditional planning and motion primitive learning, prioritizing computational efforts for enhanced efficiency within specified time limits. 
-
-[[Paper]](https://virajparimi.github.io/files/paper7.pdf)
-[[Slides]](https://virajparimi.github.io/files/slides2.pptx)
+Our approach incrementally tightens motion primitives with learned risk-aware priors, so safety-constrained agents can adapt planning horizons without exploding computation.

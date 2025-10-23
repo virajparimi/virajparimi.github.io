@@ -1,10 +1,35 @@
 ---
 title: "Catching a Ping Pong Ball with an iiwa"
-excerpt: "We programmed the kinematics of a Kuka iiwa using Drake to catch a ping pong ball with a ping pong paddle."
+excerpt: "We programmed the kinematics of a KUKA iiwa using Drake to catch and stabilize a ping pong ball."
 collection: portfolio
+header:
+  teaser: Ping_Pong.png
+  teaser_alt: "KUKA iiwa preparing to catch a ping pong ball"
+lead_image: /images/Ping_Pong.png
+lead_image_alt: "Ping pong catching pipeline for the KUKA iiwa"
+summary: "Drake-based finite-state control splits the catch into pre- and post-contact modes, combining projectile modeling with stabilized IK to stop a ping pong ball on an iiwa paddle."
+project_links:
+  - label: PDF
+    url: /files/portfolio-2/report.pdf
+    icon: file-pdf
+    btn_class: btn--primary
+  - label: Video
+    url: https://www.youtube.com/watch?v=c-lpFsNBOzU&list=PLkx8KyIQkMfUbHMSbSVTmCM63rICMdFNI&index=14
+    icon: video
+  - label: Code
+    url: https://github.com/cameronwp/ping-pong-catcher
+    icon: code
+links:
+  - label: PDF
+    url: /files/portfolio-2/report.pdf
+    icon: file-pdf
+    btn_class: btn--primary
+  - label: Video
+    url: https://www.youtube.com/watch?v=c-lpFsNBOzU&list=PLkx8KyIQkMfUbHMSbSVTmCM63rICMdFNI&index=14
+    icon: video
+  - label: Code
+    url: https://github.com/cameronwp/ping-pong-catcher
+    icon: code
 ---
 
-We programmed the kinematics of a Kuka iiwa using Drake to catch a ping pong ball with a ping pong paddle. We identified distinct kinematic regimes in the catching task, which we split into a pre-initial contact state and post-initial contact state. We applied finite-state machine (FSM) techniques to model the paddle’s trajectory off equations of motion of projectiles while in a pre-initial-contact mode, while we switched to a PD controller with offset stabilization in the post-initial-contact mode. Both modes of the system relied on passing desired end-effector velocities to a differential inverse kinematics (IK) controller with optimization-based joint limit enforcement. We simulated a perception pipeline by passing ground-truth ball and paddle states to our controller directly. Our design showed success in bringing the ball to a stop from a range of initial positions and velocities. However, keeping the ball at a stable equilibrium on the paddle surface for significant durations proved challenging and would require future work. We evaluated the performance of our system iterations by comparing their performance in stabilizing caught balls with different initial positions and velocities.  Introduced dRRT, a discrete sampling-based planner that uses Bresenham's line algorithm and techniques from search-based planning to achieve anytime qualities and reuse computation. Results on planning for a 5-DOF robotic arm demonstrate faster performance than traditional RRT.
-<br/><img style='margin: auto; display: block; padding: 50px; width: 80% !important; max-width: 700px !important;' src='/images/Ping_Pong.png'>
-
-[[PDF]](https://virajparimi.github.io/files/portfolio-2/report.pdf) [[Video]](https://www.youtube.com/watch?v=c-lpFsNBOzU&list=PLkx8KyIQkMfUbHMSbSVTmCM63rICMdFNI&index=14) [[Code]](https://github.com/cameronwp/ping-pong-catcher)
+We programmed the kinematics of a KUKA iiwa in Drake to intercept and stabilize a ping pong ball using a ping pong paddle. The controller separates the task into pre-contact and post-contact regimes: before impact we apply projectile equations within a finite-state machine to position and orient the paddle, and after impact we switch to a PD controller with offset stabilization to keep the ball near equilibrium. Both regimes feed desired end-effector velocities to a differential IK controller that enforces joint limits. Using ground-truth ball and paddle states, the system consistently halts balls with diverse initial conditions, though long-term stabilization remains challenging and motivates future work.

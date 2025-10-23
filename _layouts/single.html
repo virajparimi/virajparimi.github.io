@@ -50,6 +50,14 @@ layout: default
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
+
+        {% if page.also_in %}
+          <p class="page__also-in">Also presented at
+            {% for extra in page.also_in %}
+              {% if forloop.first == false %}; {% endif %}<i>{{ extra }}</i>
+            {% endfor %}
+          </p>
+        {% endif %}
         
              
         {% if page.citation and page.paperurl %}
@@ -57,12 +65,78 @@ layout: default
         {% elsif page.citation %}
           <p>Recommended citation: {{ page.citation }} </p>
         {% endif %}
-    
+
         </header>
       {% endunless %}
 
+      {% if page.lead_image %}
+        {% assign lead_src = page.lead_image %}
+        {% if lead_src contains "://" %}
+          {% assign lead_url = lead_src %}
+        {% else %}
+          {% assign lead_url = lead_src | prepend: base_path %}
+        {% endif %}
+        <figure class="page__lead-media">
+          <img src="{{ lead_url }}" alt="{{ page.lead_image_alt | default: page.title }}" loading="lazy">
+          {% if page.lead_image_caption %}
+            <figcaption>{{ page.lead_image_caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endif %}
+
       <section class="page__content" itemprop="text">
+        {% if page.project_links %}
+          <div class="page__project-links">
+            <span class="page__project-label"><i class="fa fa-globe" aria-hidden="true"></i> Project:</span>
+            <div class="page__project-links-list">
+              {% for link in page.project_links %}
+                {% assign link_url = link.url %}
+                {% if link_url contains '://' %}
+                  {% assign link_href = link_url %}
+                {% else %}
+                  {% assign link_href = link_url | relative_url %}
+                {% endif %}
+                <a href="{{ link_href }}" {% if link_url contains '://' %}target="_blank" rel="noopener"{% endif %}>{{ link.label | default: link.url }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
         {{ content }}
+        {% if page.abstract %}
+          <details class="page__abstract">
+            <summary class="page__abstract-summary">
+              <span class="page__abstract-title">Abstract</span>
+              <span class="page__abstract-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="page__abstract-body">
+              {{ page.abstract | markdownify }}
+            </div>
+          </details>
+        {% endif %}
+        {% if page.bibtex %}
+          <details class="page__bibtex">
+            <summary class="page__bibtex-summary">
+              <span class="page__bibtex-title">BibTeX</span>
+              <span class="page__bibtex-indicator" aria-hidden="true"></span>
+            </summary>
+            <div class="page__bibtex-body">
+              {% capture newline %}
+{% endcapture %}
+              {% assign base_bibtex = page.bibtex | strip %}
+              {% assign yaml_indent = newline | append: '  ' %}
+              {% assign without_yaml_indent = base_bibtex | replace: yaml_indent, newline %}
+              {% assign indent_target = newline | append: '  ' %}
+              {% assign indent_replacement = newline | append: '    ' %}
+              {% assign bibtex_indented = without_yaml_indent | replace: indent_target, indent_replacement %}
+              {% assign closing_target = newline | append: '    }' %}
+              {% assign closing_replacement = newline | append: '}' %}
+              {% assign page_bibtex_formatted = bibtex_indented | replace: closing_target, closing_replacement %}
+{% highlight bibtex %}
+{{ page_bibtex_formatted }}
+{% endhighlight %}
+            </div>
+          </details>
+        {% endif %}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 

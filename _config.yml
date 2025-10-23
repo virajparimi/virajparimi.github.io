@@ -86,7 +86,7 @@ author:
   location         : "Cambridge, MA"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=Uj2A2ywAAAAJ&hl=envs" 
+  googlescholar    : "https://scholar.google.com/citations?user=Uj2A2ywAAAAJ&hl=en" 
   email            : "vparimi@mit.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/virajparimi/"
+  linkedin         : "virajparimi"
   orcid            : "https://orcid.org/0000-0002-7867-780X" 
   pinterest        :
   soundcloud       :
@@ -113,7 +113,7 @@ author:
   vine             :
   weibo            :
   xing             :
-  youtube          : "https://www.youtube.com/@vparimi"
+  youtube          : "@vparimi"
   wikipedia        :
 
 
@@ -194,17 +194,6 @@ collections:
 
 # Defaults
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
   # _pages
   - scope:
       path: ""
@@ -212,15 +201,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
   # _publications
   - scope:
       path: ""
@@ -248,14 +228,6 @@ defaults:
       author_profile: true
       share: false
       comment: false
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
 
 # Sass/SCSS
 sass:

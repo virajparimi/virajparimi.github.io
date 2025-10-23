@@ -8,15 +8,22 @@
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-              {% else %}
-              {% assign domain = base_path %}
+            {% assign link_url = link.url %}
+            {% if link_url contains '://' %}
+              {% assign link_href = link_url %}
+            {% else %}
+              {% assign link_href = link_url | relative_url %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% assign link_target = link.target %}
+            <li class="masthead__menu-item">
+              <a href="{{ link_href }}"
+                 {% if link_target %}target="{{ link_target }}"{% if link_target == '_blank' %} rel="noopener"{% endif %}{% endif %}>
+                {{ link.title }}
+              </a>
+            </li>
           {% endfor %}
-            <li class="masthead__menu-item"><a href="https://virajparimi.github.io/old">Old</a></li>
-            <li class="masthead__menu-item"><a href="https://virajparimi.github.io/files/cv.pdf">CV</a></li>
+            <!-- <li class="masthead__menu-item"><a href="{{ '/old' | relative_url }}">Old</a></li>
+            <li class="masthead__menu-item"><a href="{{ '/files/cv.pdf' | relative_url }}">CV</a></li> -->
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>

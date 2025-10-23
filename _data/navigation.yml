@@ -15,11 +15,20 @@ main:
   - title: "Projects"
     url: /portfolio/
         
+  - title: "Old"
+    url: https://virajparimi.github.io/old
+    target: _blank
+
   # - title: "Blog Posts"
   #   url: /year-archive/
     
-  # - title: "CV"
-  #   url: /cv/
-    
+  - title: "Resume"
+    url: /files/Viraj-Parimi-Resume.pdf
+    target: _blank
+
+  - title: "CV"
+    url: /files/Viraj-Parimi-CV.pdf
+    target: _blank
+
   # - title: "Guide"
   #   url: /markdown/

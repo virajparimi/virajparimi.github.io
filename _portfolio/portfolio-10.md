@@ -1,10 +1,21 @@
 ---
 title: "Smart Glasses"
-excerpt: "A prototype to help blind people understand text in books and also allow them to identify people they already know in order to improve their life style. It was selected to be showcased at Delhi Mini Maker Faire."
+excerpt: "Built assistive smart glasses that read printed text aloud and recognize familiar faces, showcased at Delhi Mini Maker Faire."
 collection: portfolio
+header:
+  teaser: Smart_Glasses.png
+  teaser_alt: "Assistive smart glasses prototype"
+lead_image: /images/Smart_Glasses.png
+lead_image_alt: "Smart glasses text-to-speech and face recognition hardware"
+summary: "Prototype wearable combines OCR and face recognition to support blind users with reading and social identification."
+project_links:
+  - label: Code
+    url: https://github.com/virajparimi/Smart_Glasses
+    icon: code
+links:
+  - label: Code
+    url: https://github.com/virajparimi/Smart_Glasses
+    icon: code
 ---
 
-A prototype to help blind people understand text in books and also allow them to identify people they already know in order to improve their life style. It was selected to be showcased at Delhi Mini Maker Faire.
-<br/><img style='margin: auto; padding: 50px; display: block; width: 80% !important; max-width: 700px !important;' src='/images/Smart_Glasses.png'>
-
-[[Code]](https://github.com/virajparimi/Smart_Glasses)
+We built smart glasses that help blind users by combining OCR-driven text-to-speech with face recognition for familiar contacts. The prototype improves day-to-day independence and was showcased at the Delhi Mini Maker Faire.

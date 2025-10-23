@@ -1,11 +1,29 @@
 ---
 title: "Lossy Compression using Neural Networks"
-excerpt: "Formulated quantization techniques to generate discrete latent space representations among image and textbased autoencoder models without significant performance implications. Showcased that incorporating commit-loss to the learning process improved the compression ratio of both imageand text based models while maintaining the quality of reconstructions"
+excerpt: "Formulated quantization techniques for discrete latent autoencoders that compress image and text data without sacrificing reconstruction quality."
 collection: portfolio
+header:
+  teaser: Lossy_Compression.png
+  teaser_alt: "Autoencoder-based lossy compression overview"
+lead_image: /images/Lossy_Compression.png
+lead_image_alt: "Neural lossy compression architecture"
+summary: "Tested quantization-aware autoencoders that couple commit loss and training-time discretization to achieve compact latent codes for images and text."
+project_links:
+  - label: PDF
+    url: /files/portfolio-4/report.pdf
+    icon: file-pdf
+    btn_class: btn--primary
+  - label: Code
+    url: https://github.com/divamgupta/dnn_lossy_compression
+    icon: code
+links:
+  - label: PDF
+    url: /files/portfolio-4/report.pdf
+    icon: file-pdf
+    btn_class: btn--primary
+  - label: Code
+    url: https://github.com/divamgupta/dnn_lossy_compression
+    icon: code
 ---
 
-We used autoencoder models with discrete latent space representations to perform lossy compression of image and text based data without significant performance implicates with respect to continuous couterparts like Variational Autoencoders. To improve the compression ratio we tried a naive quantization technique followed by incorporating the quantization objective into a loss function to make the output closer to quantized numbers. Finally, we also tried a training time quantization
-technique and performed extensive experiments on different image and text based datasets.
-<br/><img style='margin: auto; display: block; width: 80% !important; max-width: 700px !important;' src='/images/Lossy_Compression.png'>
-
-[[PDF]](https://virajparimi.github.io/files/portfolio-4/report.pdf) [[Code]](https://github.com/divamgupta/dnn_lossy_compression)
+We built autoencoder models with discrete latent spaces to perform lossy compression of images and text while retaining quality comparable to continuous counterparts such as VAEs. After benchmarking naive post-hoc quantization, we incorporated quantization objectives (commit loss) directly into training and explored training-time discretization strategies. Experiments across multiple datasets show that the quantization-aware variants significantly improve compression ratios with minimal degradation in reconstructions.

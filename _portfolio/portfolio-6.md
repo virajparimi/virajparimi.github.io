@@ -1,10 +1,23 @@
 ---
 title: "Classification for Research Universities in India"
-excerpt: "Worked on an extended classification approach for research universities in India, based on the Carnegie classification approach. Proposed a simple basic criterion for identifying research universities depending on factors such as research funding, number of faculty members etc."
+excerpt: "Extended the Carnegie classification framework to identify research-focused Indian universities using funding, staffing, and output signals."
 collection: portfolio
+header:
+  teaser: NIRF.png
+  teaser_alt: "Research university classification dashboard"
+lead_image: /images/NIRF.png
+lead_image_alt: "Classification pipeline for Indian research universities"
+summary: "Designed quantitative criteria for research HEIs in India, applied them to top institutions, and surfaced 40 universities and 32 engineering colleges as research-focused."
+project_links:
+  - label: Paper
+    url: https://link.springer.com/article/10.1007/s10734-019-00406-3
+    icon: book
+    btn_class: btn--primary
+links:
+  - label: Paper
+    url: https://link.springer.com/article/10.1007/s10734-019-00406-3
+    icon: book
+    btn_class: btn--primary
 ---
 
-Evolved an approach to classify research universities in India, based on the Carnegie Classification approach. We proposed a simple basic criterion for identifying research universities, and apply it to the top 100 universities and top 100 engineering institutions in India. Using this criteria, 40 universities and 32 engineering institutions were identified as research higher education insititutes (HEIs).
-<br/><img style='margin: auto; padding: 50px; display: block; width: 80% !important; max-width: 700px !important;' src='/images/NIRF.png'>
-
-[[Paper]](https://link.springer.com/article/10.1007/s10734-019-00406-3#:~:text=the%20number%20of%20PhD%20students<Plug>PeepOpener%2Dcapita%20level%20of%20research.")
+We evolved the Carnegie Classification framework to suit the Indian higher-education landscape by proposing quantitative criteria based on research funding, faculty strength, doctoral enrollment, and research output. Applying the rubric to the top 100 universities and engineering institutions surfaced 40 universities and 32 engineering colleges that qualify as research HEIs, offering policymakers a clearer snapshot of national research capacity.

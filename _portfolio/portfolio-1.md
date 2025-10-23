@@ -1,10 +1,41 @@
 ---
 title: "Automatic Reward Densification"
-excerpt: "We implemented a system that is able to leverage classical planning over humanspecified PDDL models to automatically increase the density of robotic tasks with sparse, goal-based reward"
+excerpt: "We implemented a system that is able to leverage classical planning over human-specified PDDL models to automatically increase the density of robotic tasks with sparse, goal-based reward."
 collection: portfolio
+header:
+  teaser: ARD.png
+  teaser_alt: "Automatic reward densification concept illustration"
+lead_image: /images/ARD.png
+lead_image_alt: "Reward densification pipeline across multiple robotics tasks"
+summary: "Classical planning over human-specified PDDL models, combined with potential-based shaping, densifies sparse rewards and speeds up learning across robotic tasks."
+project_links:
+  - label: PDF
+    url: /files/portfolio-1/report.pdf
+    icon: file-pdf
+    btn_class: btn--primary
+  - label: Website
+    url: http://nishanthjkumar.com/airobot_reward_densification/
+    icon: globe
+  - label: Code
+    url: https://github.com/NishanthJKumar/airobot_reward_densification
+    icon: code
+  - label: Slides
+    url: https://docs.google.com/presentation/d/1M5sPGWkCsGoGVnfnY0i7reYVwLuUrs1Fx4Vm10iyals/edit?usp=sharing
+    icon: file-powerpoint
+links:
+  - label: PDF
+    url: /files/portfolio-1/report.pdf
+    icon: file-pdf
+    btn_class: btn--primary
+  - label: Website
+    url: http://nishanthjkumar.com/airobot_reward_densification/
+    icon: globe
+  - label: Code
+    url: https://github.com/NishanthJKumar/airobot_reward_densification
+    icon: code
+  - label: Slides
+    url: https://docs.google.com/presentation/d/1M5sPGWkCsGoGVnfnY0i7reYVwLuUrs1Fx4Vm10iyals/edit?usp=sharing
+    icon: file-powerpoint
 ---
 
-We implemented a system that is able to leverage classical planning over humanspecified PDDL models to automatically increase the density of robotic tasks with sparse, goal-based reward. We proved that an existing approach (plan-based potential) used in discrete environments is theoretically sound, implemented versions of previous approaches, and evaluated their utility to help improve performance on two robotic tasks with continuous state-action spaces and PDDL models with different granularities. Inspired by these approaches, we also developed our own potential-based shaping approach (dynamic distance-varying potential) and evaluated its utility across three different robotic tasks. Our results indicate that the granularity of the PDDL model plays an important role in how useful it is, and that while using our shaped reward generally outperforms using only the original sparse reward, outperforming a handcrafted dense reward usually requires a lot of tuning of the PDDL model and weighting assigned to various terms in the potential function.
-<br/><img style='margin: auto; display: block; padding: 50px; width: 80% !important; max-width: 700px !important;' src='/images/ARD.png'>
-
-[[PDF]](https:/virajparimi.github.io/files/portfolio-1/report.pdf) [[Website]](http://nishanthjkumar.com/airobot_reward_densification/) [[Code]](https://github.com/NishanthJKumar/airobot_reward_densification) [[Slides]](https://docs.google.com/presentation/d/1M5sPGWkCsGoGVnfnY0i7reYVwLuUrs1Fx4Vm10iyals/edit?usp=sharing)
+We implemented a system that leverages classical planning over human-specified PDDL models to automatically increase the density of sparse, goal-based rewards for robotic tasks. We first revisited plan-based potential shaping for discrete domains, proved its soundness, reproduced prior methods, and evaluated them on continuous control problems with varying PDDL granularities. Building on these insights, we proposed a dynamic distance-varying potential that consistently accelerates learning across three robotic benchmarks. Our analysis highlights how model granularity and potential weighting interact, and shows that with careful tuning our shaped reward matches or exceeds handcrafted dense signals.
