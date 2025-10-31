@@ -3,10 +3,10 @@ title: "Risk-Bounded Multi-Agent Visual Navigation via Dynamic Budget Allocation
 collection: publications
 permalink: /publication/_publications/2025-09-27-risk-bounded-multi-agent-visual-navigation-via-dynamic-budget-allocation-12
 date: 2025-09-27
-venue: 'CoRL | Safe and Robust Learning for Operation in the Real World'
+venue: "ICAPS | Workshop on Bridging the Gap Between AI Planning and Reinforcement Learning (Oral)"
 pub_type: workshop
 also_in:
-  - "ICAPS Workshop on Bridging the Gap Between AI Planning and Reinforcement Learning"
+  - 'CoRL | Safe and Robust Learning for Operation in the Real World'
 authors:
   - Viraj Parimi
   - Brian Williams

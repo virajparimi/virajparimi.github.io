@@ -58,15 +58,28 @@
       {% endif %}
 
       {% if post.collection == 'teaching' %}
-        <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+        {% assign venue_text = post.venue | replace: '(Oral)', '(<strong>Oral</strong>)' %}
+        <p>{{ post.type }}, <i>{{ venue_text }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
       {% elsif post.collection == 'publications' or post.collection == 'theses' %}
         {% if post.venue %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+          {% if post.venue.first %}
+            <p>Published in</p>
+            <div class="archive__item-venues">
+              {% for venue in post.venue %}
+                {% assign venue_text = venue | replace: '(Oral)', '(<strong>Oral</strong>)' %}
+                <i>{{ venue_text }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}</i>{% unless forloop.last %}<br>{% endunless %}
+              {% endfor %}
+            </div>
+          {% else %}
+            {% assign venue_text = post.venue | replace: '(Oral)', '(<strong>Oral</strong>)' %}
+            <p>Published in <i>{{ venue_text }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+          {% endif %}
         {% endif %}
         {% if post.also_in %}
           <p class="archive__item-note">Also presented at
             {% for extra in post.also_in %}
-              {% if forloop.first == false %}; {% endif %}<i>{{ extra }}</i>
+              {% assign extra_text = extra | replace: '(Oral)', '(<strong>Oral</strong>)' %}
+              {% if forloop.first == false %}; {% endif %}<i>{{ extra_text }}</i>
             {% endfor %}
           </p>
         {% endif %}
