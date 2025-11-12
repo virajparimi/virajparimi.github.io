@@ -3,7 +3,7 @@ title: "Task-driven Risk-bounded Hierarchical Reinforcement Learning Based on It
 collection: publications
 permalink: /publication/2024-05-20-task-driven-risk-bounded-hierarchical-reinforcement-learning-based-on-iterative-refinement
 date: 2024-05-20
-venue: 'AAAI Spring Symposium on Human-Like Learning'
+venue: 'AAAI Spring Symposium on Human-Like Learning (Oral)'
 pub_type: workshop
 authors:
   - Viraj Parimi
