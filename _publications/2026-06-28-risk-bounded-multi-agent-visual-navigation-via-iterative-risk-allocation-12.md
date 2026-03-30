@@ -34,6 +34,15 @@ abstract: |-
 header:
   teaser: RBCBS.svg
   teaser_alt: "Risk-Bounded multi-agent navigation depiction"
+bibtex: |- 
+  @inproceedings{parimi2026rbvisualmapf,
+    author    = {Viraj Parimi and Brian C. Williams},
+    title     = {Risk-Bounded Multi-Agent Visual Navigation via Iterative Risk Allocation},
+    booktitle = {Proceedings of the 36th International Conference on Automated Planning and Scheduling (ICAPS 2026)},
+    year      = {2026},
+    address   = {Dublin, Ireland},
+    note      = {To appear}
+  }
 lead_image: /images/RBCBS.svg
 lead_image_alt: "Risk-Bounded  multi-agent navigation depiction"
 ---
