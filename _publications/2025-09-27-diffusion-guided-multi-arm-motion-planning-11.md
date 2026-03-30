@@ -16,7 +16,7 @@ links:
     url: /files/paper13.pdf
     icon: file-pdf
     btn_class: btn--primary
-  - label: RSS Paper
+  - label: RSS Workshop Paper
     url: /files/paper14.pdf
     icon: file-pdf
     btn_class: btn--primary

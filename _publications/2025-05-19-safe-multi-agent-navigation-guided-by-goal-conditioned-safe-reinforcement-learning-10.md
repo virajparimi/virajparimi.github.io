@@ -18,11 +18,11 @@ links:
     url: /files/paper12.pdf
     icon: file-pdf
     btn_class: btn--primary
-  - label: NeurIPS Paper
+  - label: NeurIPS Workshop Paper
     url: /files/paper10.pdf
     icon: file-pdf
     btn_class: btn--primary
-  - label: CoRL Paper
+  - label: CoRL Workshop Paper
     url: /files/paper11.pdf
     icon: file-pdf
     btn_class: btn--primary
