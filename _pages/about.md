@@ -9,7 +9,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm Viraj, a Ph.D. candidate in Electrical Engineering and Computer Science at the Massachusetts Institute of Technology (MIT), with a minor in Management, advised by [Prof. Brian C. Williams](https://www.csail.mit.edu/person/brian-williams) in [CSAIL's Model-Based Embedded and Robotics Systems Group (MERS)](https://www.csail.mit.edu/research/model-based-embedded-and-robotics-systems-group). I am also part of the [Embodied Intelligence community](https://ei.csail.mit.edu/), and I plan to defend my thesis, [*Scaling Risk-Aware Multi-Robot Planning in the Wild through Decomposition*](/theses/), in spring 2027.
+Hi! I'm Viraj, a Ph.D. candidate in Electrical Engineering and Computer Science at the Massachusetts Institute of Technology (MIT), with a minor in Management, advised by [Prof. Brian C. Williams](https://www.csail.mit.edu/person/brian-williams) in [CSAIL's Model-Based Embedded and Robotics Systems Group (MERS)](https://www.csail.mit.edu/research/model-based-embedded-and-robotics-systems-group). I am also part of the [Embodied Intelligence community](https://ei.csail.mit.edu/). My thesis is [*Scaling Risk-Aware Multi-Robot Planning in the Wild through Decomposition*](/theses/). **I expect to graduate in spring 2027 and am on the job market.**
 
 I study how **robot teams can coordinate in the real world**, where one robot's decisions shape what is feasible, optimal, or safe for others. Instead of planning jointly for the whole team or learning coordination end to end, I combine reusable robot capabilities, learned or model-based, with explicit reasoning about how robots interact.
 
