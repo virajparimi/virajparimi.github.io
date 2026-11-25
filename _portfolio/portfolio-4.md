@@ -2,6 +2,7 @@
 title: "Lossy Compression using Neural Networks"
 excerpt: "Formulated quantization techniques for discrete latent autoencoders that compress image and text data without sacrificing reconstruction quality."
 collection: portfolio
+published: false
 header:
   teaser: Lossy_Compression.png
   teaser_alt: "Autoencoder-based lossy compression overview"

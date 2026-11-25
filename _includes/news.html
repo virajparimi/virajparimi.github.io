@@ -1,0 +1,18 @@
+{% comment %} Home-page news timeline. Items live in _data/news.yml, newest first. The latest five show and the rest fold under "Older news". Pass style="icons" to show an icon per type instead of a dot. {% endcomment %}
+{% assign news_items = site.data.news %}
+{% assign news_shown = include.limit | default: 5 %}
+{% assign news_style = include.style | default: "dots" %}
+{% capture news_row %}{% endcapture %}
+<div class="news news--{{ news_style }}">
+  <ul class="news-list">
+  {% for n in news_items limit: news_shown %}{% include news-item.html item=n %}{% endfor %}
+  </ul>
+  {% if news_items.size > news_shown %}
+  <details class="news-older">
+    <summary>Older news</summary>
+    <ul class="news-list">
+    {% for n in news_items offset: news_shown %}{% include news-item.html item=n %}{% endfor %}
+    </ul>
+  </details>
+  {% endif %}
+</div>

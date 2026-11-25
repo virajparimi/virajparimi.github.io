@@ -71,6 +71,13 @@
   }
 }
 
+.pub-section--preprint {
+  border-left-color: mix($info-color, $accent-color, 50%);
+  .pub-section__heading {
+    border-color: mix($info-color, $accent-color, 50%);
+  }
+}
+
 .pub-section--journal {
   border-left-color: $success-color;
   .pub-section__heading {
@@ -96,6 +103,61 @@
   border-left-color: $primary-color;
   .pub-section__heading {
     border-color: $primary-color;
+  }
+}
+
+/* Publication and thesis cards: compact spacing, top-aligned thumbnails */
+.pub-section {
+  .archive__item-wrapper {
+    padding: 1em 1.25em;
+  }
+
+  .archive__item-wrapper.archive__item-wrapper--with-media .archive__item {
+    align-items: flex-start;
+  }
+
+  .archive__item-media {
+    margin-top: 0.35em;
+  }
+
+  .archive__item-title {
+    margin-top: 0;
+  }
+}
+
+.archive__item-links .btn,
+.page__links .btn {
+  text-decoration: none;
+}
+
+.page__authors {
+  margin: 0.4em 0 0.6em;
+  color: mix($text-color, $gray, 70%);
+}
+
+.pub-note {
+  margin: 0.25em 0 0;
+  font-size: $type-size-6;
+  color: mix($text-color, $gray, 70%);
+}
+
+/* Phones: stack the thumbnail above the text instead of squeezing the text */
+@media (max-width: 599px) {
+  .pub-section {
+    padding: 1.25em 0.75em;
+    border-left-width: 4px;
+  }
+
+  .archive__item-wrapper.archive__item-wrapper--with-media .archive__item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75em;
+  }
+
+  .pub-section .archive__item-media {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 320px;
   }
 }
 

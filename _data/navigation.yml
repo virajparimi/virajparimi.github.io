@@ -15,10 +15,6 @@ main:
   - title: "Projects"
     url: /portfolio/
         
-  - title: "Old"
-    url: https://virajparimi.github.io/old
-    target: _blank
-
   # - title: "Blog Posts"
   #   url: /year-archive/
     

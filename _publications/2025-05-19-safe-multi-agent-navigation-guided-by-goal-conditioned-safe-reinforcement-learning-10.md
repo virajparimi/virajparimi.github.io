@@ -1,34 +1,38 @@
 ---
-title: "Safe Multi-Agent Navigation guided by Goal-Conditioned Safe Reinforcement Learning" 
+title: "Safe Multi-Agent Navigation Guided by Goal-Conditioned Safe Reinforcement Learning" 
 collection: publications
 permalink: /publication/2025-05-19-safe-multi-agent-navigation-guided-by-goal-conditioned-safe-reinforcement-learning-10
 date: 2025-05-19
-venue: 'ICRA'
+venue: 'IEEE International Conference on Robotics and Automation (ICRA)'
+venue_short: 'ICRA 2025'
 pub_type: conference
 also_in:
-  - "NeurIPS Workshop on Intrinsically Motivated Open-Ended Learning"
-  - "CoRL Workshop on Learning Effective Abstractions for Planning"
+  - "NeurIPS IMOL 2024"
+  - "CoRL LEAP 2024"
 authors:
   - Meng Feng*
   - Viraj Parimi*
   - Brian C. Williams
-summary: "Unified conflict-based search with goal-conditioned safe RL to plan long-horizon multi-agent navigation that stays safe without sacrificing efficiency."
+summary: "Builds a waypoint graph from visual experience using learned distance and safety estimates, plans paths on it with conflict-based search, and executes them with a safe goal-conditioned policy."
 links:
-  - label: ICRA Paper
-    url: /files/paper12.pdf
+  - label: Paper
+    url: https://doi.org/10.1109/ICRA55743.2025.11127461
     icon: file-pdf
     btn_class: btn--primary
-  - label: NeurIPS Workshop Paper
-    url: /files/paper10.pdf
+  - label: arXiv
+    page_only: true
+    url: https://arxiv.org/abs/2502.17813
     icon: file-pdf
-    btn_class: btn--primary
-  - label: CoRL Workshop Paper
-    url: /files/paper11.pdf
-    icon: file-pdf
-    btn_class: btn--primary
+  - label: Code
+    url: https://github.com/virajparimi/safe-visual-mapf
+    icon: code
   - label: Website
     url: https://safe-visual-mapf-mers.csail.mit.edu/
     icon: globe
+  - label: Poster
+    page_only: true
+    url: https://safe-visual-mapf-mers.csail.mit.edu/static/files/ICRA_Poster.pdf
+    icon: file-image
 abstract: |-
   Safe navigation is essential for autonomous systems operating in hazardous environments. Traditional planning methods are effective for solving long-horizon tasks but depend on the availability of a graph representation with predefined distance metrics. In contrast, safe Reinforcement Learning (RL) is capable of learning complex behaviors without relying on manual heuristics but fails to solve long-horizon tasks, particularly in goal-conditioned and multi-agent scenarios.
 
@@ -36,22 +40,20 @@ abstract: |-
 
   Utilizing this unified high-level graph and a shared low-level safe GCRL policy, we extend this approach to address the multi-agent safe navigation problem. In particular, we leverage Conflict-Based Search (CBS) to create waypoint-based plans for multiple agents allowing for their safer navigation over extended horizons. This integration enhances the scalability of goal-conditioned safe RL in multi-agent scenarios, enabling efficient coordination among agents. Extensive benchmarking against state-of-the-art baselines demonstrates the effectiveness of our method in achieving distance goals safely for multiple agents in complex and hazardous environments.
 header:
-  teaser: Safe_MAPF.png
+  teaser: Safe_MAPF_clean.png
   teaser_alt: "Safe multi-agent navigation depiction"
 bibtex: |-
-  @INPROCEEDINGS{11127461,
-    author={Feng, Meng and Parimi, Viraj and Williams, Brian},
-    booktitle={2025 IEEE International Conference on Robotics and Automation (ICRA)},
-    title={Safe Multi-Agent Navigation Guided by Goal-Conditioned Safe Reinforcement Learning},
-    year={2025},
-    volume={},
-    number={},
-    pages={16869-16875},
-    keywords={Training;Visualization;Navigation;Scalability;Heuristic algorithms;Reinforcement learning;Manuals;Distance measurement;Planning;Safety},
-    doi={10.1109/ICRA55743.2025.11127461}
+  @inproceedings{feng2025safe,
+    title     = {Safe Multi-Agent Navigation Guided by Goal-Conditioned Safe Reinforcement Learning},
+    author    = {Feng, Meng and Parimi, Viraj and Williams, Brian C.},
+    booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+    pages     = {16869--16875},
+    year      = {2025},
+    doi       = {10.1109/ICRA55743.2025.11127461}
   }
-lead_image: /images/Safe_MAPF.svg
-lead_image_alt: "Safe multi-agent navigation depiction"
+lead_image: /images/Safe_MAPF_clean.png
+lead_image_alt: "Learning phase with a safe goal-conditioned RL agent, and planning phase where a MAPF planner produces waypoint paths for each agent"
+lead_image_caption: "In the learning phase, a safe goal-conditioned RL agent learns to estimate distance and safety between observations. In the planning phase, a MAPF planner uses those estimates to give each agent a sequence of waypoints, which the agent follows with the shared policy."
 ---
 
-We prune risky graph edges with learned value functions and feed the remainder into CBS, allowing a shared goal-conditioned safe RL policy to scale to multi-agent navigation problems while retaining safety guarantees.
+Safe RL policies can learn to navigate from raw observations such as camera images, but they struggle to reach distant goals, and classical planners need a map with known distances. This work builds a graph from states the agent has already visited, uses learned value functions to estimate distance and safety along each edge, and removes edges that are too risky. CBS then plans waypoints for each agent on this graph, so **a single shared policy** can take a team of agents to distant goals safely. [Follow-up work](/publication/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12) replaces this edge pruning with a risk budget shared by the team.

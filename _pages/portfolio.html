@@ -7,10 +7,26 @@ author_profile: true
 
 {% include base_path %}
 
+<p class="pub-note">Open-source code from my research, followed by course and side projects. Earlier projects are on <a href="https://virajparimi.github.io/old">my old website</a>.</p>
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+{% assign software = site.data.software %}
+<div class="pub-section pub-section--software">
+  <h2 class="pub-section__heading">Open-Source Software <span class="pub-section__count">{{ software.size }}</span></h2>
+  <ul class="software-list">
+  {% for repo in software %}
+    <li class="software-item">
+      <a class="software-item__name" href="{{ repo.url }}"><i class="fab fa-github" aria-hidden="true"></i>{{ repo.name }}</a>
+      <span class="software-item__desc">{{ repo.short }}</span>
+      {% if repo.venue %}<a class="software-item__venue" href="{{ base_path }}{{ repo.paper_url }}">{{ repo.venue }}</a>{% else %}<span class="software-item__venue"></span>{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
 
-<hr>
-You can find my other projects at my <u><a href="{{ '/old' | relative_url }}">my old website</a>.</u>
+{% assign projects = site.portfolio | sort: "order" %}
+<div class="pub-section pub-section--project">
+  <h2 class="pub-section__heading">Course and Side Projects <span class="pub-section__count">{{ projects.size }}</span></h2>
+  {% for post in projects %}
+    {% include archive-single.html %}
+  {% endfor %}
+</div>

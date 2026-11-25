@@ -1,14 +1,17 @@
 ---
 title: "A Computationally Scalable Bayesian Sequential Learning Framework for Time-Series Forecasting"
 collection: publications
+published: false
 permalink: /publication/2022-01-01-computationally-scalable-bayesian-sequential-learning-framework-for-time-series-forecasting
 date: 2022-01-01
-pub_type: misc
+venue_short: 'Preprint 2021'
+pub_type: preprint
+status: 'Preprint, 2021'
 authors:
   - Viraj Parimi
   - Isaac K. Isukapati
   - Stephen F. Smith
-summary: "Scales Bayesian sequential forecasting to real-time deployments by swapping costly MCMC with Nested Sampling, keeping accuracy high even in small, non-stationary datasets."
+summary: "Replaces MCMC with nested sampling in Bayesian sequential forecasting, giving up to 10,000× faster inference while staying accurate on small, non-stationary datasets."
 links:
   - label: Paper
     url: /files/paper4.pdf
@@ -20,7 +23,8 @@ header:
   teaser: Nested_Sampling.png
   teaser_alt: "Bayesian Sequential Learning with Nested Sampling"
 lead_image: /images/Nested_Sampling.png
-lead_image_alt: "Bayesian Sequential Learning with Nested Sampling"
+lead_image_alt: "Nested likelihood contours and the likelihood plotted against enclosed prior volume"
+lead_image_caption: "Nested sampling draws samples inside nested contours of increasing likelihood (left) and estimates the evidence by summing the likelihood over the prior volume each contour encloses (right). Illustration adapted from Feroz and Hobson (2008)."
 ---
 
-Develops a Bayesian sequential learning framework for time-series forecasting that replaces expensive MCMC inference with Nested Sampling, enabling scalable online predictions. By comparing against frequentist and deep-learning baselines across three real-world datasets, the authors show their approach handles limited, non-stationary data more efficiently while retaining forecasting accuracy.
+Bayesian sequential learning suits forecasting problems with little historical data and non-stationary behavior, but its MCMC estimation step is too slow for online forecasting. This work replaces MCMC with nested sampling in that step. On a synthetic Mackey-Glass sequence, nested sampling runs up to 10,000 times faster than Metropolis-Hastings and Hamiltonian Monte Carlo. Across that sequence, bus dwell times at Pittsburgh bus stops and a simulated radial velocity signal, it is more accurate than LSTM and ARIMA baselines.

@@ -1,30 +1,32 @@
 ---
 title: "Risk-Bounded Multi-Agent Visual Navigation via Iterative Risk Allocation" 
 collection: publications
-permalink: /publication/_publications/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12
+permalink: /publication/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12
+redirect_from:
+  - /publication/_publications/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12
 date: 2026-06-28
-venue: "ICAPS"
+venue: "International Conference on Automated Planning and Scheduling (ICAPS)"
+venue_short: 'ICAPS 2026'
 pub_type: conference
 also_in:
-  - 'ICAPS Workshop on Bridging the Gap Between AI Planning and Reinforcement Learning (Oral)'
-  - 'CoRL Workshop on Safe and Robust Learning for Operation in the Real World'
+  - 'ICAPS PRL 2025 (Talk)'
+  - 'CoRL SAFE-ROL 2025'
 authors:
   - Viraj Parimi
-  - Brian Williams
-summary: "Dynamic CBS risk budgeting lets visual multi-agent teams push through higher-risk corridors when it pays off, delivering faster, collision-free plans while still honoring the user’s $\\Delta$ constraint."
+  - Brian C. Williams
+summary: "Reallocates a team-wide risk budget among robots during conflict-based search, so robots navigating from visual observations can take shorter, riskier routes when the budget allows."
 links:
-  - label: ICAPS Paper
-    url: /files/paper17.pdf
+  - label: Paper
+    url: https://doi.org/10.1609/icaps.v36i1.42829
     icon: file-pdf
     btn_class: btn--primary
-  - label: CoRL Workshop Paper
-    url: /files/paper15.pdf
+  - label: arXiv (with appendix)
+    page_only: true
+    url: https://arxiv.org/abs/2509.08157
     icon: file-pdf
-    btn_class: btn--primary
-  - label: ICAPS Workshop Paper
-    url: /files/paper16.pdf
-    icon: file-pdf
-    btn_class: btn--primary
+  - label: Code
+    url: https://github.com/virajparimi/rb-safe-visual-mapf
+    icon: code
   - label: Website
     url: https://rb-safe-visual-mapf-mers.csail.mit.edu/
     icon: globe
@@ -32,19 +34,27 @@ links:
 abstract: |-
   Safe navigation is essential for autonomous systems operating in hazardous environments, especially when multiple agents must coordinate using only high-dimensional visual observations. While recent approaches successfully combine Goal-Conditioned RL (GCRL) for graph construction with Conflict-Based Search (CBS) for planning, they typically rely on deleting edges with high risk before running CBS to enforce safety. This binary strategy is overly conservative, precluding feasible missions that require traversing high-risk regions, even when the aggregate risk is acceptable. To address this, we introduce a framework for Risk-Bounded Multi-Agent Path Finding ($\Delta$-MAPF), where agents share a user-specified global risk budget ($\Delta$). Rather than permanently discarding edges, our framework dynamically distributes per-agent risk budgets ($\delta_i$) during search via an Iterative Risk Allocation (IRA) layer that integrates with a standard CBS planner. We investigate two distribution strategies: a greedy surplus-deficit scheme for rapid feasibility repair, and a market-inspired mechanism that treats risk as a priced resource to guide improved allocation. The market-based mechanism yields a tunable trade-off wherein agents exploit available risk to secure shorter, more efficient paths, but revert to longer, safer detours under tighter budgets. Experiments in complex visual environments show that our dynamic allocation framework achieves higher success rates than baselines and effectively leverages the available safety budget to reduce travel time.
 header:
-  teaser: RBCBS.svg
+  teaser: RBCBS_teaser.png
   teaser_alt: "Risk-Bounded multi-agent navigation depiction"
-bibtex: |- 
-  @inproceedings{parimi2026rbvisualmapf,
-    author    = {Viraj Parimi and Brian C. Williams},
+bibtex: |-
+  @inproceedings{parimi2026risk,
     title     = {Risk-Bounded Multi-Agent Visual Navigation via Iterative Risk Allocation},
-    booktitle = {Proceedings of the 36th International Conference on Automated Planning and Scheduling (ICAPS 2026)},
+    author    = {Parimi, Viraj and Williams, Brian C.},
+    booktitle = {Proceedings of the International Conference on Automated Planning and Scheduling (ICAPS)},
+    volume    = {36},
+    pages     = {200--209},
     year      = {2026},
-    address   = {Dublin, Ireland},
-    note      = {To appear}
+    doi       = {10.1609/icaps.v36i1.42829}
   }
-lead_image: /images/RBCBS.svg
-lead_image_alt: "Risk-Bounded  multi-agent navigation depiction"
+lead_video: /images/highlights/rbcbs_sim.mp4
+lead_video_poster: /images/highlights/rbcbs_sim.jpg
+lead_video_alt: "Four simulated Crazyflie drones navigating around a central obstacle and through an apartment scene"
+lead_video_caption: "Four simulated Crazyflie drones follow RB-CBS paths around a central obstacle (left) and through an apartment scene (right), sped up."
 ---
 
-Extends the CBS + goal-conditioned RL pipeline with a iterative risk-allocation layer, so a global risk budget $\Delta$ is redistributed into per-agent budgets $\delta$ that adapt mid-plan; as agents explore hazardous regions the planner rebalances these budgets, achieving safer-yet-faster multi-agent navigation than the prior fixed-pruning approach.
+Earlier work on [safe visual navigation](/publication/2025-05-19-safe-multi-agent-navigation-guided-by-goal-conditioned-safe-reinforcement-learning-10) kept robots safe by deleting high-risk edges from the waypoint graph before planning, which rules out missions that must cross risky regions even when the total risk is acceptable. This work instead gives the team **one shared risk budget** and reallocates it between robots during conflict-based search, so robots can take shorter routes through hazardous areas whenever the total risk stays within the budget.
+
+<figure class="page__lead-media">
+  <img src="/images/RBCBS.svg" alt="Paths from four baselines and from RB-CBS at three global risk budgets" loading="lazy">
+  <figcaption>Paths from four baselines and from RB-CBS at global risk budgets Δ of 0%, 5% and 25%. As the budget grows, RB-CBS accepts more risk in exchange for shorter paths.</figcaption>
+</figure>

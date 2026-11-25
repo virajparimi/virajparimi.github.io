@@ -2,6 +2,7 @@
 title: "GitHub Recommender System" 
 excerpt: "Built an implicit-feedback recommender that suggests open-source repositories, achieving 0.72 recall."
 collection: portfolio
+published: false
 header:
   teaser: Github_Recommender_System.png
   teaser_alt: "GitHub recommender system workflow"

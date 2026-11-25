@@ -12,6 +12,7 @@
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
+@import "inter"; // self-hosted Inter web font
 @import "mixins";
 @import "vendor/susy/susy";
 
@@ -39,3 +40,5 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+@import "clean"; // clean academic overrides, keep last

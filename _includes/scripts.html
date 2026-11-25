@@ -1,3 +1,10 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
+<script>
+  (function () {
+    function remeasure() { window.dispatchEvent(new Event("resize")); }
+    window.addEventListener("load", remeasure);
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(remeasure); }
+  })();
+</script>
 
 {% include analytics.html %}

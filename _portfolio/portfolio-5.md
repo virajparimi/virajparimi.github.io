@@ -2,6 +2,7 @@
 title: "Autonomous Driving using CNNs"
 excerpt: "Trained a custom CNN on Unreal Engine Blocks simulator data to steer the vehicle autonomously."
 collection: portfolio
+published: false
 header:
   teaser: Autonomous_Driving.gif
   teaser_alt: "Autonomous vehicle navigating a simulated track"

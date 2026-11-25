@@ -25,8 +25,18 @@ layout: default
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
-        <header>
+        <header{% if page.collection == "publications" or page.collection == "theses" or page.collection == "portfolio" %} class="page__header--item"{% endif %}>
           {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% if page.authors %}
+            {% assign primary_author = site.author.name | default: site.name %}
+            {%- capture page_authors -%}
+              {%- for author in page.authors -%}
+                {%- if primary_author and author contains primary_author -%}<strong>{{ author }}</strong>{%- else -%}{{ author }}{%- endif -%}{% unless forloop.last %}, {% endunless %}
+              {%- endfor -%}
+            {%- endcapture -%}
+            <p class="page__authors">{{ page_authors | strip }}</p>
+            {% if page_authors contains "*" %}<p class="page__equal">* Equal contribution</p>{% endif %}
+          {% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
@@ -36,16 +46,17 @@ layout: default
         
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif page.status %}
+          <p class="page__venue">{% if page.venue %}<i>{{ page.venue }}</i> &middot; {% endif %}{{ page.status }}</p>
         {% elsif page.venue and page.date %}
           {% if page.venue.first %}
-            <p> Published in, </p> 
-            <div style="padding-left: 20px; margin-top: -20px; margin-bottom: 20px;">
+            <div class="page__venue">
               {% for venue in page.venue %}
                 <i>{{ venue }}, {{ page.date | default: "1900-01-01" | date: "%Y" }}</i>{% if forloop.last == false %}<br> {% endif %}
               {% endfor %}  
             </div>
           {% else %}
-            <p>Published in, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+            <p class="page__venue"><i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }}</p>
           {% endif %}
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
@@ -54,9 +65,25 @@ layout: default
         {% if page.also_in %}
           <p class="page__also-in">Also presented at
             {% for extra in page.also_in %}
-              {% if forloop.first == false %}; {% endif %}<i>{{ extra }}</i>
+              {% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}<i>{{ extra }}</i>
             {% endfor %}
           </p>
+        {% endif %}
+
+        {% if page.links %}
+          <div class="archive__item-links page__links">
+            {% for link in page.links %}
+              {% assign link_url = link.url %}
+              {% if link_url contains '://' %}
+                {% assign link_href = link_url %}
+              {% else %}
+                {% assign link_href = link_url | relative_url %}
+              {% endif %}
+              <a class="btn btn--sm {{ link.btn_class | default: 'btn--primary' }}" href="{{ link_href }}" {% if link_url contains '://' %}target="_blank" rel="noopener"{% endif %}>
+                {% if link.icon %}<i class="fa fa-{{ link.icon }}" aria-hidden="true"></i> {% endif %}{{ link.label }}
+              </a>
+            {% endfor %}
+          </div>
         {% endif %}
         
              
@@ -69,7 +96,16 @@ layout: default
         </header>
       {% endunless %}
 
-      {% if page.lead_image %}
+      {% if page.lead_video %}
+        <figure class="page__lead-media">
+          <video autoplay muted loop playsinline preload="metadata"{% if page.lead_video_poster %} poster="{{ page.lead_video_poster | prepend: base_path }}"{% endif %} aria-label="{{ page.lead_video_alt | default: page.title }}">
+            <source src="{{ page.lead_video | prepend: base_path }}" type="video/mp4">
+          </video>
+          {% if page.lead_video_caption %}
+            <figcaption>{{ page.lead_video_caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% elsif page.lead_image %}
         {% assign lead_src = page.lead_image %}
         {% if lead_src contains "://" %}
           {% assign lead_url = lead_src %}
@@ -103,58 +139,56 @@ layout: default
         {% endif %}
         {{ content }}
         {% if page.abstract %}
-          <details class="page__abstract">
-            <summary class="page__abstract-summary">
-              <span class="page__abstract-title">Abstract</span>
-              <span class="page__abstract-indicator" aria-hidden="true"></span>
-            </summary>
-            <div class="page__abstract-body">
+          <details class="page__abstract-toggle">
+            <summary><h2 class="page__section-title">Abstract</h2></summary>
+            <div class="page__abstract-text">
               {{ page.abstract | markdownify }}
             </div>
           </details>
         {% endif %}
         {% if page.bibtex %}
-          <details class="page__bibtex">
-            <summary class="page__bibtex-summary">
-              <span class="page__bibtex-title">BibTeX</span>
-              <span class="page__bibtex-indicator" aria-hidden="true"></span>
-            </summary>
-            <div class="page__bibtex-body">
+          <h2 class="page__section-title">Citation</h2>
+          <div class="page__bibtex-block">
+            <button type="button" class="page__copy" aria-label="Copy BibTeX">Copy</button>
               {% capture newline %}
 {% endcapture %}
-              {% assign base_bibtex = page.bibtex | strip %}
-              {% assign yaml_indent = newline | append: '  ' %}
-              {% assign without_yaml_indent = base_bibtex | replace: yaml_indent, newline %}
-              {% assign indent_target = newline | append: '  ' %}
-              {% assign indent_replacement = newline | append: '    ' %}
-              {% assign bibtex_indented = without_yaml_indent | replace: indent_target, indent_replacement %}
-              {% assign closing_target = newline | append: '    }' %}
-              {% assign closing_replacement = newline | append: '}' %}
-              {% assign page_bibtex_formatted = bibtex_indented | replace: closing_target, closing_replacement %}
+              {% assign bib_lines = page.bibtex | strip | split: newline %}
+              {% assign page_bibtex_formatted = "" %}
+              {% for bib_line in bib_lines %}
+                {% assign bib_text = bib_line | strip %}
+                {% if bib_text == "" %}{% continue %}{% endif %}
+                {% unless forloop.first %}{% assign page_bibtex_formatted = page_bibtex_formatted | append: newline %}{% endunless %}
+                {% if forloop.first or bib_text == "}" %}
+                  {% assign page_bibtex_formatted = page_bibtex_formatted | append: bib_text %}
+                {% else %}
+                  {% assign page_bibtex_formatted = page_bibtex_formatted | append: "  " | append: bib_text %}
+                {% endif %}
+              {% endfor %}
 {% highlight bibtex %}
 {{ page_bibtex_formatted }}
 {% endhighlight %}
-            </div>
-          </details>
+          </div>
+          <script>
+            (function () {
+              var button = document.querySelector(".page__copy");
+              if (!button || !navigator.clipboard) { if (button) button.hidden = true; return; }
+              button.addEventListener("click", function () {
+                var code = button.parentNode.querySelector("code");
+                navigator.clipboard.writeText(code.innerText.trim()).then(function () {
+                  button.textContent = "Copied";
+                  setTimeout(function () { button.textContent = "Copy"; }, 1500);
+                });
+              });
+            })();
+          </script>
         {% endif %}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
       {% if page.title == 'About' %}
-          <section style="text-align: center;">
-            <a href="https://mers.csail.mit.edu/">
-              <img src="images/mers_logo.png" class="img-fluid" alt="MERS" style="width: 23%">
-            </a>
-            <a href="https://www.csail.mit.edu/">
-              <img src="images/CSAIL.png" class="img-fluid" alt="CSAIL" style="width: 23%;">
-            </a>
-            <a href="https://ei.csail.mit.edu/">
-              <img src="images/EI.jpeg" class="img-fluid" alt="EI" style="width: 15%;">
-            </a>
-            <a href="https://www.eecs.mit.edu/">
-              <img src="images/EECS.png" class="img-fluid" alt="EECS" style="width: 15%;">
-            </a>
-            </section>
+          <section class="about-logos">
+            <a href="https://mers.csail.mit.edu/"><img src="{{ base_path }}/images/mers_logo.png" alt="MERS group"></a><a href="https://www.csail.mit.edu/"><img src="{{ base_path }}/images/CSAIL.png" alt="MIT CSAIL"></a><a href="https://ei.csail.mit.edu/"><img src="{{ base_path }}/images/EI.jpeg" alt="Embodied Intelligence at MIT"></a><a href="https://www.eecs.mit.edu/"><img src="{{ base_path }}/images/EECS.png" alt="MIT EECS"></a>
+          </section>
       {% endif %}
 
       <footer class="page__meta">
@@ -166,7 +200,15 @@ layout: default
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
-      {% include post_pagination.html %}
+      {% if page.collection == 'publications' %}
+        <a class="page__back" href="{{ base_path }}/publications/">&larr; All publications</a>
+      {% elsif page.collection == 'theses' %}
+        <a class="page__back" href="{{ base_path }}/theses/">&larr; All theses</a>
+      {% elsif page.collection == 'portfolio' %}
+        <a class="page__back" href="{{ base_path }}/portfolio/">&larr; All projects</a>
+      {% else %}
+        {% include post_pagination.html %}
+      {% endif %}
     </div>
 
     {% if site.comments.provider and page.comments %}

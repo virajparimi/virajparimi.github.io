@@ -1,0 +1,35 @@
+# Open-source software listed on the Projects page, newest first.
+# venue and paper_url point to the publication page on this site; leave them out when there is none.
+- name: rb-safe-visual-mapf
+  url: https://github.com/virajparimi/rb-safe-visual-mapf
+  short: "Risk-bounded multi-robot visual navigation"
+  venue: "ICAPS 2026"
+  paper_url: /publication/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12
+
+- name: diff-mapf
+  url: https://github.com/virajparimi/diff-mapf
+  short: "Diffusion-guided multi-arm motion planning"
+  venue: "CoRL 2025"
+  paper_url: /publication/2025-09-27-diffusion-guided-multi-arm-motion-planning-11
+
+- name: safe-visual-mapf
+  url: https://github.com/virajparimi/safe-visual-mapf
+  short: "Safe multi-robot navigation from images"
+  venue: "ICRA 2025"
+  paper_url: /publication/2025-05-19-safe-multi-agent-navigation-guided-by-goal-conditioned-safe-reinforcement-learning-10
+
+- name: info-mapf
+  url: https://github.com/virajparimi/info-mapf
+  short: "Information-driven MAPF for exploration"
+  venue: "IROS 2024"
+  paper_url: /publication/2024-09-19-multi-agent-vulcan-an-information-driven-multi-agent-path-finding-approach
+
+- name: gpu-colcheck-py
+  url: https://github.com/virajparimi/gpu-colcheck-py
+  short: "GPU collision checking for two robot arms"
+
+- name: thtn
+  url: https://github.com/virajparimi/thtn
+  short: "Timeline-based HTN planner in C++"
+  venue: "ICAPS HPlan 2022"
+  paper_url: /publication/2022-06-13-thtn-timeline-based-htn-planning-for-multiple-robots

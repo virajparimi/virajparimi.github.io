@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Viraj Parimi"
 title_separator          : "-"
 name                     : &name "Viraj Parimi"
-description              : &description "Graduate Research Assistant at MIT"
+description              : &description "Ph.D. candidate at MIT CSAIL working on safe, scalable multi-robot planning"
 url                      : https://virajparimi.github.io # https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "virajparimi/virajparimi.github.io"
@@ -62,7 +62,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "profile_square.jpg" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -73,16 +73,14 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
-  google:
-    tracking_id          : "UA-110955894-1"
+  provider               :  "custom" # GoatCounter, see _includes/analytics-providers/custom.html
 
 
 # Site Author
 author:
   name             : "Viraj Parimi"
-  avatar           : "profile.jpg"
-  bio              : "Ph.D. Student at MIT"
+  avatar           : "profile_square.jpg"
+  bio              : "Ph.D. Candidate at MIT CSAIL"
   location         : "Cambridge, MA"
   employer         :
   pubmed           : 
@@ -194,6 +192,11 @@ collections:
 
 # Defaults
 defaults:
+  # PDF of a hidden paper; kept because the CV links it, but not listed for search engines
+  - scope:
+      path: "files/paper4.pdf"
+    values:
+      sitemap: false
   # _pages
   - scope:
       path: ""

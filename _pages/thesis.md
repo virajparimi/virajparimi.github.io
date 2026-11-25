@@ -17,13 +17,6 @@ author_profile: true
 
 {% if thesis_count > 0 %}
 <div class="pub-section pub-section--thesis">
-  <h2 class="pub-section__heading">
-    {% if thesis_count > 1 %}
-      Theses
-    {% else %}
-      Master's Thesis
-    {% endif %}
-  </h2>
   {% for post in theses %}
     {% include archive-single.html %}
   {% endfor %}

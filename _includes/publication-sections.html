@@ -1,0 +1,62 @@
+{% assign compact = include.compact | default: false %}
+
+{% assign conferences = site.publications | where: "pub_type", "conference" | sort: "date" | reverse %}
+{% assign preprints = site.publications | where: "pub_type", "preprint" | sort: "date" | reverse %}
+{% assign journals = site.publications | where: "pub_type", "journal" | sort: "date" | reverse %}
+{% assign workshops = site.publications | where: "pub_type", "workshop" | sort: "date" | reverse %}
+{% assign book_chapters = site.publications | where: "pub_type", "book" | sort: "date" | reverse %}
+{% assign misc = site.publications | where: "pub_type", "misc" | sort: "date" | reverse %}
+
+{% if conferences != empty %}
+<div class="pub-section pub-section--conference">
+  <h2 class="pub-section__heading">Conference Papers <span class="pub-section__count">{{ conferences.size }}</span></h2>
+  {% for post in conferences %}
+    {% include archive-single.html compact=compact %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if preprints != empty %}
+<div class="pub-section pub-section--preprint">
+  <h2 class="pub-section__heading">Preprints &amp; Under Review <span class="pub-section__count">{{ preprints.size }}</span></h2>
+  {% for post in preprints %}
+    {% include archive-single.html compact=compact %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if journals != empty %}
+<div class="pub-section pub-section--journal">
+  <h2 class="pub-section__heading">Journal Articles <span class="pub-section__count">{{ journals.size }}</span></h2>
+  {% for post in journals %}
+    {% include archive-single.html compact=compact %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if workshops != empty %}
+<div class="pub-section pub-section--workshop">
+  <h2 class="pub-section__heading">Workshops &amp; Symposia <span class="pub-section__count">{{ workshops.size }}</span></h2>
+  {% for post in workshops %}
+    {% include archive-single.html compact=compact %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if book_chapters != empty %}
+<div class="pub-section pub-section--book">
+  <h2 class="pub-section__heading">Book Chapters <span class="pub-section__count">{{ book_chapters.size }}</span></h2>
+  {% for post in book_chapters %}
+    {% include archive-single.html compact=compact %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if misc != empty %}
+<div class="pub-section pub-section--misc">
+  <h2 class="pub-section__heading">Miscellaneous <span class="pub-section__count">{{ misc.size }}</span></h2>
+  {% for post in misc %}
+    {% include archive-single.html compact=compact %}
+  {% endfor %}
+</div>
+{% endif %}

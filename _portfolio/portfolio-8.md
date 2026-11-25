@@ -2,6 +2,7 @@
 title: "COTTON: A Light-Weight Work-Stealing Runtime"
 excerpt: "Developed an energy-aware async-finish runtime that adjusts CPU frequency via task-aware heuristics without sacrificing performance."
 collection: portfolio
+published: false
 header:
   teaser: COTTON.png
   teaser_alt: "COTTON runtime architecture"

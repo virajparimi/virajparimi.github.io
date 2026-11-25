@@ -2,6 +2,7 @@
 title: "Classification for Research Universities in India"
 excerpt: "Extended the Carnegie classification framework to identify research-focused Indian universities using funding, staffing, and output signals."
 collection: portfolio
+published: false
 header:
   teaser: NIRF.png
   teaser_alt: "Research university classification dashboard"

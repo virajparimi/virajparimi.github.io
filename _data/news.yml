@@ -1,0 +1,74 @@
+# Home-page news, newest first. date is YYYY-MM. type is paper, talk, award, career, milestone or press (sets the icon and colour).
+# Text is Markdown. Follow the site prose rules (no colons, semicolons or dashes).
+- date: 2026-09
+  type: paper
+  text: "[MAGIC](/publication/2026-09-01-belief-aware-multi-agent-path-finding-under-map-uncertainty-13), belief-aware MAPF under map uncertainty, is on arXiv."
+- date: 2026-09
+  type: talk
+  text: "Co-organized a tutorial on MAPF with precedence constraints at the IEEE RAS Summer School at Chiemsee, near Munich, Germany."
+- date: 2026-07
+  type: press
+  text: "Our multi-arm work was [featured by MIT Open Learning](https://www.linkedin.com/posts/mit-open-learning_many-hands-make-light-work-even-for-robots-activity-7483593888843153408-8vJ0)."
+- date: 2026-06
+  type: talk
+  text: "Presented [risk-bounded visual navigation](/publication/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12) at ICAPS 2026 in Dublin, Ireland."
+- date: 2026-06
+  type: award
+  text: "Selected for the **ICAPS 2026 Doctoral Consortium** and received a **travel grant**!"
+- date: 2026-06
+  type: career
+  text: "Started a research scientist internship at Symbotic."
+- date: 2026-06
+  type: paper
+  text: "[MoMo](/publication/2026-05-01-momo-conditioned-contrastive-representation-learning-for-preference-modulated-planning-16) accepted as a talk at the PRL workshop at ICAPS 2026 in Dublin, Ireland."
+- date: 2026-05
+  type: paper
+  text: "[MoMo](/publication/2026-05-01-momo-conditioned-contrastive-representation-learning-for-preference-modulated-planning-16), led by Yusuf Syed, is on arXiv."
+- date: 2026-03
+  type: paper
+  text: "[PACT](/publication/2026-03-01-large-neighborhood-search-for-multi-agent-task-assignment-and-path-finding-with-precedence-constraints-17), task assignment with precedence constraints, is on arXiv."
+- date: 2026-02
+  type: paper
+  text: "[Risk-bounded multi-agent visual navigation](/publication/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12) accepted at **ICAPS 2026**!"
+- date: 2025-09
+  type: talk
+  text: "Presented [DG-MAP](/publication/2025-09-27-diffusion-guided-multi-arm-motion-planning-11) at CoRL 2025 in Seoul, Korea."
+- date: 2025-09
+  type: paper
+  text: "[Risk-bounded multi-agent visual navigation](/publication/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12) accepted at the SAFE-ROL workshop at CoRL 2025 in Seoul, Korea."
+- date: 2025-08
+  type: paper
+  text: "[Risk-bounded multi-agent visual navigation](/publication/2026-06-28-risk-bounded-multi-agent-visual-navigation-via-iterative-risk-allocation-12) accepted as a talk and poster at the PRL workshop at ICAPS 2025 in Melbourne, Australia."
+- date: 2025-08
+  type: paper
+  text: "[DG-MAP](/publication/2025-09-27-diffusion-guided-multi-arm-motion-planning-11) accepted at **CoRL 2025**!"
+- date: 2025-06
+  type: paper
+  text: "[DG-MAP](/publication/2025-09-27-diffusion-guided-multi-arm-motion-planning-11) accepted at the multi-robot systems workshop at RSS 2025 in Los Angeles, USA."
+- date: 2025-05
+  type: talk
+  text: "Presented [safe multi-agent visual navigation](/publication/2025-05-19-safe-multi-agent-navigation-guided-by-goal-conditioned-safe-reinforcement-learning-10) at ICRA 2025 in Atlanta, USA, and took part in its Doctoral Consortium."
+- date: 2025-01
+  type: paper
+  text: "[Safe multi-agent visual navigation](/publication/2025-05-19-safe-multi-agent-navigation-guided-by-goal-conditioned-safe-reinforcement-learning-10) accepted at **ICRA 2025**!"
+- date: 2024-12
+  type: milestone
+  text: "Passed my **research qualifying exam** at MIT!"
+- date: 2024-10
+  type: paper
+  text: "[Safe multi-agent visual navigation](/publication/2025-05-19-safe-multi-agent-navigation-guided-by-goal-conditioned-safe-reinforcement-learning-10) accepted at the IMOL workshop at NeurIPS 2024 in Vancouver, Canada, and the LEAP workshop at CoRL 2024 in Munich, Germany."
+- date: 2024-10
+  type: talk
+  text: "Presented [Multi-Agent Vulcan](/publication/2024-09-19-multi-agent-vulcan-an-information-driven-multi-agent-path-finding-approach) as an oral pitch at IROS 2024 in Abu Dhabi, UAE."
+- date: 2024-06
+  type: paper
+  text: "[Multi-Agent Vulcan](/publication/2024-09-19-multi-agent-vulcan-an-information-driven-multi-agent-path-finding-approach) accepted at **IROS 2024**!"
+- date: 2024-03
+  type: talk
+  text: "Gave a talk on [risk-bounded hierarchical reinforcement learning](/publication/2024-05-20-task-driven-risk-bounded-hierarchical-reinforcement-learning-based-on-iterative-refinement) at the AAAI Spring Symposium at Stanford University."
+- date: 2024-01
+  type: paper
+  text: "[Task-driven risk-bounded hierarchical reinforcement learning](/publication/2024-05-20-task-driven-risk-bounded-hierarchical-reinforcement-learning-based-on-iterative-refinement) accepted as a talk at the AAAI Spring Symposium on Human-Like Learning."
+- date: 2022-08
+  type: press
+  text: "Featured with Jingkai Chen in an [MIT CSAIL Alliances lab tour](https://www.youtube.com/watch?v=6SZ5KTqnCwE) on robot arm assembly."

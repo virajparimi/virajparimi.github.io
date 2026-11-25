@@ -2,6 +2,7 @@
 title: "Parallel Depth First Search for Directed Acyclic Graphs"
 excerpt: "Implemented a CUDA-based parallel DFS for DAGs that delivers substantial speedups over serial traversals."
 collection: portfolio
+published: false
 header:
   teaser: Parallel_DFS.jpg
   teaser_alt: "Parallel DFS architecture on GPU"
