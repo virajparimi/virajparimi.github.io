@@ -68,7 +68,12 @@ og_image                 : "profile_square.jpg" # Open Graph/Twitter default sit
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  links: # An array of links to social media profiles (tells search engines these profiles are the same person)
+    - "https://scholar.google.com/citations?user=Uj2A2ywAAAAJ"
+    - "https://orcid.org/0000-0002-7867-780X"
+    - "https://www.linkedin.com/in/virajparimi"
+    - "https://github.com/virajparimi"
+    - "https://www.youtube.com/@vparimi"
 
 
 # Analytics
